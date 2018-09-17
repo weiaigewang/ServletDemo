@@ -8,7 +8,7 @@
  >缺点很明显：base64文件太大，不利于传值
 
   另一种：通过js的FormData对象，这样做就要后台引入新的jar包进行。
->1. 新的jar包  （like commons-fileupload-1.3.3.jar） (like commons-io-2.0.1-URBA2209RC1.jar)
+>1. 新的jar包  （like commons-fileupload-1.3.3.jar） (like commons-io-2.0.1-URBA2209RC1.jar)这两个jar包可以再[maven的官方仓库](http://mvnrepository.com/)中去下载
 >2. js的(like FormData对象)提交表单，的js简单写法
 
 ```
@@ -51,8 +51,8 @@ $("#myImage").on("change",function(){
 ```
 ## 2 demo的介绍
 
-  -1 IDEA打开项目之后，运行项目，端口为8080端口
-  -2 打开前端demo，运行文件，填写参数，点击提交。
+  - 1 IDEA打开项目之后，运行项目，端口为8080端口
+  - 2 打开前端demo，运行文件，填写参数，点击提交。
   
   
   
