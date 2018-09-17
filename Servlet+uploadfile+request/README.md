@@ -42,7 +42,7 @@ $("#myImage").on("change",function(){
      获取 formData.get('user')  //zhang
      删除 formData.delete('user')
 ```
-   3  注意2：参数 
+   4  **注意参数**  
    
    new FormData的参数是一个DOM对象，而非jQuery对象
    
