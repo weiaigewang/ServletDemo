@@ -2,7 +2,7 @@
 
 ##  1 跨域请求后台的时候，servlet不能通过直接requset.getParameter('filename')获取到file文件的值
 
-[请求截图](https://icon-img.oss-cn-beijing.aliyuncs.com/image/QQ%E6%8B%BC%E9%9F%B3%E6%88%AA%E5%9B%BE20180917200741.png)
+![请求截图](https://icon-img.oss-cn-beijing.aliyuncs.com/image/QQ%E6%8B%BC%E9%9F%B3%E6%88%AA%E5%9B%BE20180917200741.png)
 
    对于文件上传在跨域请求的时候有两种方式：
    
