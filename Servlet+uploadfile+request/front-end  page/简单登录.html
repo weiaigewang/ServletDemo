@@ -1,0 +1,64 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Servlet-jCuckoo</title>
+  <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+<form >
+  用户名：<input type="text" id="userName"/><br/>
+      密码：<input type="password" id="userPwd"/><br/>
+      确认密码：<input type="repassword" id="reuserPwd"/><br/>
+      爱好：<input type="text" id="hobby"/><br/>
+      手机：<input type="text" id="phone"/><br/>
+      个人简介：<input type="text" id="summary"/><br/>
+  <input type="button" value="登录" id="sender">
+</form>
+<div id="messageDiv"></div>
+
+<script>
+    $('#sender').click(function(){
+        var userName=document.getElementById('userName').value;
+        var userPwd=document.getElementById('userPwd').value;
+        var reuserPwd=document.getElementById('reuserPwd').value;
+        var phone=document.getElementById('phone').value;
+        var hobby=document.getElementById('hobby').value;
+        var summary=document.getElementById('summary').value;
+        var user={
+        	      userName:userName,
+        	      userPwd:userPwd,
+        	      reuserPwd:reuserPwd,
+        	      phone:phone,
+        	      hobby:hobby,
+        	      summary:summary
+        };
+        var url="http://localhost:8080/demo/LoginUserServlet";
+
+        alert(JSON.stringify(user));
+        $.post(url, JSON.stringify(user), function(data) {
+            console.log(data);
+            $("#messageDiv").html(data);
+            var json=JSON.parse(data);
+            alert(json.message);
+        });
+        /* $.ajax({
+           type:'post',
+           url:url,
+           dataType:"json",
+           data:JSON.stringify(user),
+           success: function (data) {
+               var user=data.user;
+                $("#messageDiv").html(JSON.stringify(user));
+                alert(data.message);
+           },
+           error: function (data) {
+                alert(data.message);
+                $("#messageDiv").html("");
+           }
+       });  */
+
+    });
+</script>
+</body>
+</html>

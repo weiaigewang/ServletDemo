@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文件上传</title>
+		<script type="text/javascript" src="jquery.min.js" ></script>
+	</head>
+	<body>
+		
+		<input type="file" name="file" id="myImage" />
+		
+		<script>
+        	$("#myImage").on("change",function(){
+        		//alert("状态改变！！！");
+        		var formData = new FormData($("#myImage")[0]);
+        		console.log($("#myImage")[0].files);
+				formData.append("file", $("#myImage")[0].files[0]);
+				
+				console.log(formData.get("file"));
+	            $.ajax({
+	                url : 'http://localhost:8080/demo/upload/file',
+	                type:"POST",
+	                data:formData,
+	                dateType:'json',
+	                processData:false,
+	                contentType:false,
+	                success:function(data){
+	                	var json=JSON.parse(data);
+	                    alert(json.message);
+	                }
+	            });
+        	});
+	   </script>
+	</body>
+</html>
